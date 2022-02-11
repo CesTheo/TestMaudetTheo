@@ -9,12 +9,36 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">ArtSpot</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div>
+    <div>
+      <a href="./add-post">
+        <!-- <ion-button color="primary">Ajout un post</ion-button> -->
+      </a>
+    </div>
+    <ion-card *ngFor="let post of data">
+      <ion-card-header>
+        <ion-card-subtitle>{{ post.date }}</ion-card-subtitle>
+        <ion-card-title>{{ post.nom }}</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <div>
+          <img src='{{ post.image }}' alt="">
+        </div>
+        <div>
+          x : {{ post.x }} <br> y : {{ post.y }}
+        </div>
+        <div *ngIf="!(post.isLike)">
+          <ion-icon name="heart-outline"></ion-icon>
+        </div>
+        <div *ngIf="post.isLike">
+          <ion-icon name="heart"></ion-icon>
+        </div>
+      </ion-card-content>
+    </ion-card>
   </div>
+
 </ion-content>
