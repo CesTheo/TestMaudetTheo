@@ -1,0 +1,7 @@
+{
+  "name": "controleTheoMaudet2BCI",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
